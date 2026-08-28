@@ -8,7 +8,7 @@ import { Search } from "@/components/ui/Search";
 import { HEADER_NAV, SITE_CONFIG } from "@/lib/navigation";
 import { Menu, X } from "lucide-react";
 import { GithubIcon } from "@/components/ui/GithubIcon";
-import Image from "next/image";
+import { OwaspIcon } from "@/components/ui/OwaspIcon";
 
 export function Header() {
   const pathname = usePathname();
@@ -83,16 +83,10 @@ export function Header() {
               flexShrink: 0,
             }}
           >
-            <Image
-              src="/owasp-icon.svg"
-              alt="OWASP"
-              width={28}
-              height={28}
-              style={{
-                filter: "brightness(0) invert(1)",
-                opacity: 0.9,
-              }}
-              priority
+            <OwaspIcon
+              size={28}
+              aria-hidden
+              style={{ color: "rgba(255,255,255,0.9)", flexShrink: 0 }}
             />
             <span
               style={{

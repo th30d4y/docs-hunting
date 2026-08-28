@@ -1,6 +1,6 @@
 import { GithubIcon } from "@/components/ui/GithubIcon";
 import Link from "next/link";
-import Image from "next/image";
+import { OwaspIcon } from "@/components/ui/OwaspIcon";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { PAYLOAD_CATEGORIES, PAYLOAD_PAGES } from "@/lib/payload-data";
@@ -85,14 +85,7 @@ export default function HomePage() {
                 letterSpacing: "0.03em",
               }}
             >
-              <Image
-                src="/owasp-icon.svg"
-                alt="OWASP"
-                width={16}
-                height={16}
-                style={{ filter: "brightness(0) invert(1)", opacity: 0.8 }}
-                priority
-              />
+              <OwaspIcon size={16} aria-hidden style={{ color: "rgba(255,255,255,0.8)" }} />
               <span style={{ color: "var(--color-ink-muted)" }}>OWASP Hunting — Security Testing Reference</span>
             </div>
 

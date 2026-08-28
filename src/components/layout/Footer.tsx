@@ -1,6 +1,6 @@
 import { GithubIcon } from "@/components/ui/GithubIcon";
 import Link from "next/link";
-import Image from "next/image";
+import { OwaspIcon } from "@/components/ui/OwaspIcon";
 import { ExternalLink } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/navigation";
 
@@ -34,12 +34,10 @@ export function Footer() {
               marginBottom: "0.75rem",
             }}
           >
-            <Image
-              src="/owasp-icon.svg"
-              alt="OWASP"
-              width={24}
-              height={24}
-              style={{ filter: "brightness(0) invert(1)", opacity: 0.7 }}
+            <OwaspIcon
+              size={24}
+              aria-hidden
+              style={{ color: "rgba(255,255,255,0.7)", flexShrink: 0 }}
             />
             <span
               style={{
