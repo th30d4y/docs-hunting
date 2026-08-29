@@ -65,12 +65,13 @@ export function Footer() {
               href={SITE_CONFIG.upstreamRepo}
               target="_blank"
               rel="noopener noreferrer"
+              className="footer-link"
               style={{
                 display: "flex",
                 alignItems: "center",
                 gap: "0.375rem",
                 fontSize: "0.8125rem",
-                color: "var(--color-ink-secondary)",
+                color: "var(--color-ink-muted)",
                 textDecoration: "none",
               }}
             >
@@ -82,12 +83,13 @@ export function Footer() {
               href={SITE_CONFIG.forkRepo}
               target="_blank"
               rel="noopener noreferrer"
+              className="footer-link"
               style={{
                 display: "flex",
                 alignItems: "center",
                 gap: "0.375rem",
                 fontSize: "0.8125rem",
-                color: "var(--color-ink-secondary)",
+                color: "var(--color-ink-muted)",
                 textDecoration: "none",
               }}
             >
@@ -123,9 +125,10 @@ export function Footer() {
               <li key={item.href}>
                 <Link
                   href={item.href}
+                  className="footer-link"
                   style={{
                     fontSize: "0.8125rem",
-                    color: "var(--color-ink-secondary)",
+                    color: "var(--color-ink-muted)",
                     textDecoration: "none",
                   }}
                 >
@@ -162,9 +165,10 @@ export function Footer() {
               <li key={item.href}>
                 <Link
                   href={item.href}
+                  className="footer-link"
                   style={{
                     fontSize: "0.8125rem",
-                    color: "var(--color-ink-secondary)",
+                    color: "var(--color-ink-muted)",
                     textDecoration: "none",
                   }}
                 >
@@ -199,9 +203,10 @@ export function Footer() {
               <li key={item.href}>
                 <Link
                   href={item.href}
+                  className="footer-link"
                   style={{
                     fontSize: "0.8125rem",
-                    color: "var(--color-ink-secondary)",
+                    color: "var(--color-ink-muted)",
                     textDecoration: "none",
                   }}
                 >
@@ -214,12 +219,13 @@ export function Footer() {
                 href="https://owasp.org"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="footer-link"
                 style={{
                   display: "flex",
                   alignItems: "center",
                   gap: "0.25rem",
                   fontSize: "0.8125rem",
-                  color: "var(--color-ink-secondary)",
+                  color: "var(--color-ink-muted)",
                   textDecoration: "none",
                 }}
               >
@@ -232,12 +238,13 @@ export function Footer() {
                 href={`${SITE_CONFIG.upstreamRepo}/blob/main/LICENSE`}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="footer-link"
                 style={{
                   display: "flex",
                   alignItems: "center",
                   gap: "0.25rem",
                   fontSize: "0.8125rem",
-                  color: "var(--color-ink-secondary)",
+                  color: "var(--color-ink-muted)",
                   textDecoration: "none",
                 }}
               >
@@ -275,7 +282,8 @@ export function Footer() {
             href={SITE_CONFIG.upstreamRepo}
             target="_blank"
             rel="noopener noreferrer"
-            style={{ color: "var(--color-ink-secondary)", textDecoration: "none" }}
+            className="footer-link"
+            style={{ color: "var(--color-ink-muted)", textDecoration: "none" }}
           >
             OWASP Hunting project
           </a>
@@ -293,7 +301,8 @@ export function Footer() {
             href={`${SITE_CONFIG.upstreamRepo}/blob/main/LICENSE`}
             target="_blank"
             rel="noopener noreferrer"
-            style={{ color: "var(--color-ink-secondary)", textDecoration: "none" }}
+            className="footer-link"
+            style={{ color: "var(--color-ink-muted)", textDecoration: "none" }}
           >
             MIT License
           </a>

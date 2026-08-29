@@ -130,6 +130,7 @@ export default function HomePage() {
             <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
               <Link
                 href="/docs/getting-started"
+                className="btn-primary"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -141,7 +142,6 @@ export default function HomePage() {
                   textDecoration: "none",
                   fontSize: "0.9375rem",
                   fontWeight: 600,
-                  transition: "background-color 0.15s",
                 }}
               >
                 <BookOpen size={16} aria-hidden />
@@ -149,6 +149,7 @@ export default function HomePage() {
               </Link>
               <Link
                 href="/payloads"
+                className="btn-secondary"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -161,7 +162,6 @@ export default function HomePage() {
                   textDecoration: "none",
                   fontSize: "0.9375rem",
                   fontWeight: 500,
-                  transition: "border-color 0.15s, color 0.15s",
                 }}
               >
                 <Code2 size={16} aria-hidden />
@@ -171,6 +171,7 @@ export default function HomePage() {
                 href={SITE_CONFIG.upstreamRepo}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="btn-ghost"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -183,7 +184,6 @@ export default function HomePage() {
                   textDecoration: "none",
                   fontSize: "0.9375rem",
                   fontWeight: 400,
-                  transition: "color 0.15s",
                 }}
               >
                 <GithubIcon size={16} aria-hidden />
@@ -495,15 +495,16 @@ function CategoryGroup({
           <li key={item.slug}>
             <Link
               href={`/payloads/${item.slug}`}
+              className="hvr-nav"
               style={{
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
                 padding: "0.375rem 1rem",
+                borderRadius: "4px",
                 fontSize: "0.8125rem",
                 color: "var(--color-ink-secondary)",
                 textDecoration: "none",
-                transition: "color 0.15s, background-color 0.15s",
               }}
             >
               {item.title}
@@ -534,6 +535,7 @@ function RepoCard({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
+      className="card-link"
       style={{
         display: "flex",
         alignItems: "center",
@@ -543,7 +545,6 @@ function RepoCard({
         border: "1px solid var(--color-line)",
         borderRadius: "8px",
         textDecoration: "none",
-        transition: "border-color 0.15s",
       }}
     >
       <GithubIcon size={22} style={{ color: "var(--color-ink-secondary)", flexShrink: 0 }} aria-hidden />

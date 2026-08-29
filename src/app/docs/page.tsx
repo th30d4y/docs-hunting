@@ -39,6 +39,7 @@ export default function DocsIndexPage() {
               href={SITE_CONFIG.upstreamRepo}
               target="_blank"
               rel="noopener noreferrer"
+              className="btn-secondary"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -58,6 +59,7 @@ export default function DocsIndexPage() {
               href={SITE_CONFIG.forkRepo}
               target="_blank"
               rel="noopener noreferrer"
+              className="btn-secondary"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -75,6 +77,7 @@ export default function DocsIndexPage() {
             </a>
             <Link
               href="/contributing"
+              className="btn-secondary"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -122,6 +125,7 @@ export default function DocsIndexPage() {
             <Link
               key={page.slug}
               href={`/docs/${page.slug}`}
+              className="card-link"
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -131,7 +135,6 @@ export default function DocsIndexPage() {
                 border: "1px solid var(--color-line)",
                 borderRadius: "7px",
                 textDecoration: "none",
-                transition: "border-color 0.15s",
               }}
             >
               <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>

@@ -93,7 +93,7 @@ body {
 .prose h1 { font-size: 1.875rem; font-weight: 700; line-height: 1.2; margin: 0 0 1.5rem; color: var(--color-ink); letter-spacing: -0.02em; }
 .prose h2 { font-size: 1.375rem; font-weight: 600; line-height: 1.3; margin: 2.5rem 0 1rem; color: var(--color-ink); letter-spacing: -0.01em; padding-top: 0.5rem; border-top: 1px solid var(--color-line); }
 .prose h3 { font-size: 1.125rem; font-weight: 600; line-height: 1.4; margin: 2rem 0 0.75rem; color: var(--color-ink); }
-.prose h4 { font-size: 1rem; font-weight: 600; margin: 1.5rem 0 0.5rem; color: var(--color-ink-secondary); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.75rem; }
+.prose h4 { font-size: 0.75rem; font-weight: 600; margin: 1.5rem 0 0.5rem; color: var(--color-ink-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
 .prose p { margin: 0 0 1.25rem; }
 .prose strong { color: var(--color-ink); font-weight: 600; }
 .prose em { font-style: italic; }
@@ -208,6 +208,20 @@ body {
   color: var(--color-ink-muted);
 }
 
+/* ─── Responsive utilities (shared across components) ───────────────────── */
+@media (min-width: 768px) {
+  .mobile-only { display: none !important; }
+  .docs-sidebar { display: block !important; }
+  .mobile-nav-trigger { display: none !important; }
+}
+@media (max-width: 767px) {
+  .hidden-mobile { display: none !important; }
+  .docs-sidebar { display: none !important; }
+}
+@media (max-width: 1024px) {
+  .docs-toc { display: none !important; }
+}
+
 /* ─── Hover helpers (for use in Server Components) ──────────────────────── */
 .hvr-border:hover { border-color: var(--color-line-strong) !important; }
 .hvr-bg-raised:hover { background-color: var(--color-surface-raised) !important; }
@@ -223,6 +237,31 @@ body {
 }
 a.hvr-text-ink, button.hvr-text-ink { transition: color 0.15s; }
 a.hvr-border, div.hvr-border { transition: border-color 0.15s; }
+a.hvr-nav, button.hvr-nav { transition: color 0.15s, background-color 0.15s; }
+
+/* ─── Interactive card links ─────────────────────────────────────────────── */
+.card-link { transition: border-color 0.15s, background-color 0.15s; }
+.card-link:hover {
+  border-color: var(--color-line-strong) !important;
+  background-color: var(--color-surface-raised) !important;
+}
+
+/* ─── Buttons ────────────────────────────────────────────────────────────── */
+.btn-primary { transition: background-color 0.15s; }
+.btn-primary:hover { background-color: var(--color-accent-hover) !important; }
+
+.btn-secondary { transition: border-color 0.15s, color 0.15s; }
+.btn-secondary:hover {
+  border-color: var(--color-line-strong) !important;
+  color: var(--color-ink) !important;
+}
+
+.btn-ghost { transition: color 0.15s; }
+.btn-ghost:hover { color: var(--color-ink) !important; }
+
+/* ─── Footer / generic text links ───────────────────────────────────────── */
+.footer-link { transition: color 0.15s; }
+.footer-link:hover { color: var(--color-ink-secondary) !important; }
 
 /* ─── Utilities ──────────────────────────────────────────────────────────── */
 .link-external::after {

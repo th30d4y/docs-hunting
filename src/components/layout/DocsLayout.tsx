@@ -47,19 +47,6 @@ export function DocsLayout({ children, toc, navSections, wide }: DocsLayoutProps
           {toc}
         </aside>
       )}
-
-      <style>{`
-        @media (max-width: 1024px) {
-          .docs-toc { display: none !important; }
-        }
-        @media (min-width: 768px) {
-          .docs-sidebar { display: block !important; }
-          .mobile-nav-trigger { display: none !important; }
-        }
-        @media (max-width: 767px) {
-          .docs-sidebar { display: none !important; }
-        }
-      `}</style>
     </div>
   );
 }

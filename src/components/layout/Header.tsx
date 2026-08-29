@@ -328,15 +328,6 @@ export function Header() {
       </header>
 
       <Search open={searchOpen} onClose={() => setSearchOpen(false)} />
-
-      <style>{`
-        @media (min-width: 768px) {
-          .mobile-only { display: none !important; }
-        }
-        @media (max-width: 767px) {
-          .hidden-mobile { display: none !important; }
-        }
-      `}</style>
     </>
   );
 }

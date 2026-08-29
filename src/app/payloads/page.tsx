@@ -93,6 +93,7 @@ export default function PayloadsIndexPage() {
                 <Link
                   key={item.slug}
                   href={`/payloads/${item.slug}`}
+                  className="card-link"
                   style={{
                     display: "flex",
                     alignItems: "center",
@@ -102,7 +103,6 @@ export default function PayloadsIndexPage() {
                     border: "1px solid var(--color-line)",
                     borderRadius: "6px",
                     textDecoration: "none",
-                    transition: "border-color 0.15s, background-color 0.15s",
                   }}
                 >
                   <div>

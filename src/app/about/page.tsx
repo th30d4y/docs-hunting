@@ -71,6 +71,7 @@ export default function AboutPage() {
                 href={r.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="card-link"
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -80,7 +81,6 @@ export default function AboutPage() {
                   border: "1px solid var(--color-line)",
                   borderRadius: "7px",
                   textDecoration: "none",
-                  transition: "border-color 0.15s",
                 }}
               >
                 <GithubIcon size={20} style={{ color: "var(--color-ink-secondary)", flexShrink: 0 }} />
