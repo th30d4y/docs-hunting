@@ -96,7 +96,7 @@ export function Header() {
                 letterSpacing: "-0.01em",
               }}
             >
-              Hunting
+             OWASP Hunting
             </span>
           </Link>
 
