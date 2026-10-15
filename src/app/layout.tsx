@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
+import { SITE_CONFIG } from "@/lib/navigation";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -15,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hunting.0d4y.dev"),
+  metadataBase: new URL(SITE_CONFIG.url),
   title: {
     template: "%s — OWASP Hunting",
     default: "OWASP Hunting — Security Testing Documentation",
@@ -37,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://hunting.0d4y.dev",
+    url: SITE_CONFIG.url,
     siteName: "OWASP Hunting",
     title: "OWASP Hunting — Security Testing Documentation",
     description:
@@ -71,6 +73,12 @@ export default function RootLayout({
         }}
       >
         {children}
+        {Boolean(SITE_CONFIG.basePath) && (
+          <Script
+            src={`${SITE_CONFIG.basePath}/redirect-to-primary.js`}
+            strategy="beforeInteractive"
+          />
+        )}
       </body>
     </html>
   );

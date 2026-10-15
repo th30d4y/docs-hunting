@@ -5,7 +5,7 @@ import { TableOfContents } from "@/components/layout/TableOfContents";
 import { PageNavigation } from "@/components/ui/PageNavigation";
 import { CodeBlock } from "@/components/ui/CodeBlock";
 import { Callout } from "@/components/ui/Callout";
-import { DOCS_NAV } from "@/lib/navigation";
+import { DOCS_NAV, SITE_CONFIG } from "@/lib/navigation";
 import { getDocPage, getAllDocSlugs, DOC_PAGES } from "@/lib/docs-data";
 import type { Metadata } from "next";
 
@@ -185,7 +185,9 @@ function renderMarkdown(md: string): string {
     .replace(/\*(.+?)\*/g, "<em>$1</em>")
     .replace(/`([^`]+)`/g, "<code>$1</code>")
     // Links
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, href) =>
+      `<a href="${href.startsWith("/") ? SITE_CONFIG.basePath + href : href}">${label}</a>`
+    )
     // Lists
     .replace(/^- (.+)$/gm, "<li>$1</li>")
     .replace(/(<li>.*<\/li>\n)+/g, (m) => `<ul>${m}</ul>`)

@@ -39,10 +39,6 @@ export function Header() {
     return () => window.removeEventListener("keydown", handler);
   }, [openSearch]);
 
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
-
   return (
     <>
       <header
@@ -265,6 +261,7 @@ export function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
+                    onClick={() => setMobileOpen(false)}
                     style={{
                       display: "block",
                       padding: "0.625rem 0.75rem",
@@ -327,7 +324,7 @@ export function Header() {
         )}
       </header>
 
-      <Search open={searchOpen} onClose={() => setSearchOpen(false)} />
+      {searchOpen && <Search open onClose={() => setSearchOpen(false)} />}
     </>
   );
 }

@@ -13,7 +13,6 @@ import {
   ArrowRight,
   Terminal,
   Search,
-  Users,
   GitBranch,
 } from "lucide-react";
 

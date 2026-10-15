@@ -3,7 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import Link from "next/link";
 import { SITE_CONFIG } from "@/lib/navigation";
-import { ExternalLink, Users, BookOpen, Shield } from "lucide-react";
+import { ExternalLink, BookOpen, Shield } from "lucide-react";
 
 export const metadata = {
   title: "Community",

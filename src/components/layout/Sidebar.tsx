@@ -14,9 +14,6 @@ interface SidebarProps {
 
 function SidebarSection({ section }: { section: NavSection }) {
   const pathname = usePathname();
-  const isActive = section.items.some(
-    (item) => pathname === item.href || pathname.startsWith(item.href + "/")
-  );
   const [collapsed, setCollapsed] = useState(false);
 
   return (
@@ -127,7 +124,6 @@ export function Sidebar({ sections }: SidebarProps) {
 
 export function MobileSidebar({ sections }: SidebarProps) {
   const [open, setOpen] = useState(false);
-  const pathname = usePathname();
 
   return (
     <>

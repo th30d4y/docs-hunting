@@ -1,11 +1,9 @@
 import { GithubIcon } from "@/components/ui/GithubIcon";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import { DocsLayout } from "@/components/layout/DocsLayout";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { TableOfContents } from "@/components/layout/TableOfContents";
 import { PayloadBlock } from "@/components/ui/PayloadBlock";
-import { Callout } from "@/components/ui/Callout";
 import { Disclaimer } from "@/components/ui/Disclaimer";
 import { PageNavigation } from "@/components/ui/PageNavigation";
 import { PAYLOAD_NAV, SITE_CONFIG } from "@/lib/navigation";

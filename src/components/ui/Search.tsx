@@ -1,7 +1,7 @@
 "use client";
 
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import Fuse from "fuse.js";
 import { X, Search as SearchIcon, FileText, Code, Users, ArrowRight } from "lucide-react";
@@ -33,30 +33,21 @@ interface SearchProps {
 
 export function Search({ open, onClose }: SearchProps) {
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState<SearchItem[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
   const router = useRouter();
+  const results = useMemo(
+    () => query.trim() ? fuse.search(query.trim()).slice(0, 12).map((r) => r.item) : [],
+    [query]
+  );
 
   useEffect(() => {
     if (open) {
-      setQuery("");
-      setResults([]);
-      setActiveIndex(0);
-      setTimeout(() => inputRef.current?.focus(), 50);
+      const timer = setTimeout(() => inputRef.current?.focus(), 50);
+      return () => clearTimeout(timer);
     }
   }, [open]);
-
-  useEffect(() => {
-    if (!query.trim()) {
-      setResults([]);
-      return;
-    }
-    const res = fuse.search(query.trim()).slice(0, 12).map((r) => r.item);
-    setResults(res);
-    setActiveIndex(0);
-  }, [query]);
 
   const navigate = useCallback(
     (item: SearchItem) => {
@@ -155,7 +146,10 @@ export function Search({ open, onClose }: SearchProps) {
             type="text"
             placeholder="Search documentation, payloads, methodology…"
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => {
+              setQuery(e.target.value);
+              setActiveIndex(0);
+            }}
             onKeyDown={handleKeyDown}
             autoComplete="off"
             spellCheck={false}
