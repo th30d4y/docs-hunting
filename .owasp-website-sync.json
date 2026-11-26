@@ -159,6 +159,7 @@
     "src/lib/payload-search.ts",
     "src/lib/payload-types.ts",
     "src/lib/print-styles.test.ts",
+    "src/lib/search-data.test.ts",
     "src/lib/search-data.ts",
     "src/lib/search-highlight.test.ts",
     "src/lib/search-highlight.ts",
