@@ -163,6 +163,8 @@
     "src/lib/search-highlight.test.ts",
     "src/lib/search-highlight.ts",
     "src/lib/sidebar-layout.test.ts",
+    "src/lib/theme.test.ts",
+    "src/lib/theme.ts",
     "src/lib/utils.ts",
     "tsconfig.json"
   ]
