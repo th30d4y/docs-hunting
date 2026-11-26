@@ -151,6 +151,8 @@
     "src/lib/payload-data.ts",
     "src/lib/payload-files.test.ts",
     "src/lib/payload-files.ts",
+    "src/lib/payload-groups.test.ts",
+    "src/lib/payload-groups.ts",
     "src/lib/payload-layout.test.ts",
     "src/lib/payload-safety.test.ts",
     "src/lib/payload-search.test.ts",
