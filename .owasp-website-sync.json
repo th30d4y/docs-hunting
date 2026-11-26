@@ -157,6 +157,8 @@
     "src/lib/payload-search.ts",
     "src/lib/payload-types.ts",
     "src/lib/search-data.ts",
+    "src/lib/search-highlight.test.ts",
+    "src/lib/search-highlight.ts",
     "src/lib/utils.ts",
     "tsconfig.json"
   ]
